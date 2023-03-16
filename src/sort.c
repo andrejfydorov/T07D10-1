@@ -4,7 +4,7 @@
 
 #define NMAX 10
 
-int input(int *a, int* n);
+int input(int *a, int *n);
 void output(int *a, int n);
 void quick_sort(int *s_arr, int first, int last);
 int check_array(int *a, int n);
@@ -12,7 +12,7 @@ void swap(int *a, int *b);
 
 int main() {
   int n = NMAX;
-  int* data = malloc(n * sizeof(int));
+  int *data = malloc(n * sizeof(int));
 
   if (input(data, &n) == 0 && check_array(data, n) == 0) {
     quick_sort(data, 0, n - 1);
@@ -25,17 +25,17 @@ int main() {
   return 0;
 }
 
-int input(int *a, int* n) {
-    scanf("%d", n);
-    if(*n > 10)
-        return -1;
+int input(int *a, int *n) {
+  scanf("%d", n);
+  if (*n > 10)
+    return -1;
 
-    for (int *p = a; p - a < *n; p++) {
-        if (scanf("%d", p) != 1) {
-        return -1;
-        }
+  for (int *p = a; p - a < *n; p++) {
+    if (scanf("%d", p) != 1) {
+      return -1;
     }
-    return 0;
+  }
+  return 0;
 }
 
 void output(int *a, int n) {
